@@ -8,6 +8,8 @@ val mkEnum  : a ::: Type -> {ToInt   : a -> int,
 
 val toInt   : a ::: Type -> enum a -> a -> int
 val fromInt : a ::: Type -> enum a -> int -> a
+val next    : a ::: Type -> enum a -> a -> a (* calling isStart on a if (isStart a) yields true causes a failure (not using option for speed reasons? ) *)
+val prev    : a ::: Type -> enum a -> a -> a (* dito *)
 
 (* implementations *)
 val enum_int  : enum int 
