@@ -1,5 +1,5 @@
-class enum a = { ToInt   : a -> int,
-                FromInt : int -> a
+class enum a = { ToInt   : a -> int
+                , FromInt : int -> a
                 , Next    : a -> a
                 , Prev    : a -> a
                 }
@@ -8,8 +8,8 @@ val mkEnum [a] (x : { ToInt   : a -> int,
                       FromInt : int -> a }) =
                             { ToInt   = fn a => x.ToInt a
                             , FromInt = fn a => x.FromInt a
-                            , Next    = fn a => x.ToInt (x.FromInt (a + 1))
-                            , Prev    = fn a => x.ToInt (x.FromInt (a - 1))
+                            , Next    = fn a => x.FromInt ((x.ToInt a) + 1)
+                            , Prev    = fn a => x.FromInt ((x.ToInt a) - 1)
                             }
 (*
                     x

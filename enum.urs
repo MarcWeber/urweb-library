@@ -13,7 +13,6 @@ val prev    : a ::: Type -> enum a -> a -> a (* dito *)
 
 (* implementations *)
 val enum_int  : enum int 
-val enum_char : enum char
 
 
 val to      : a ::: Type -> enum a -> a -> a -> list a
