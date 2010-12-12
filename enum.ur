@@ -19,7 +19,6 @@ val mkEnum [a] (x : { ToInt   : a -> int,
 *)
 
 val enum_int  = { ToInt = fn i => i, FromInt = fn i => i }
-val enum_char = { ToInt = ord, FromInt = chr }
 
 
 fun toInt   [a] (e : enum a) a = e.ToInt a
